@@ -31,7 +31,7 @@ export default function AboutPage() {
           <strong>Truth:</strong> We are committed to sharing the truth of God&apos;s Word with integrity and clarity.
         </p>
         <p className="text-gray-700 mb-3">
-          <strong>Love:</strong> We believe in showing Christ's love to everyone, regardless of background or belief.
+          <strong>Love:</strong> We believe in showing Christ&apos;s love to everyone, regardless of background or belief.
         </p>
         <p className="text-gray-700 mb-3">
           <strong>Growth:</strong> We encourage continuous spiritual growth and a deepening relationship with Jesus.
