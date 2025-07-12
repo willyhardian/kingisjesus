@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffaf0; /* Cream background */
+  --foreground: #4b3f2f; /* Dark brown text */
+  
+  /* Custom color palette */
+  --cream-50: #fffaf0;
+  --cream-100: #feebc8;
+  --cream-200: #fbd38d;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --amber-900: #78350f;
 }
 
 @theme inline {
@@ -10,17 +18,62 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom colors */
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-amber-700: var(--amber-700);
+  --color-amber-800: var(--amber-800);
+  --color-amber-900: var(--amber-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #2d2417; /* Dark brown background */
+    --foreground: #f8f0e3; /* Light cream text */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Additional utility classes */
+.bg-cream-50 {
+  background-color: var(--cream-50);
+}
+
+.bg-cream-100 {
+  background-color: var(--cream-100);
+}
+
+.border-cream-200 {
+  border-color: var(--cream-200);
+}
+
+.text-amber-700 {
+  color: var(--amber-700);
+}
+
+.text-amber-800 {
+  color: var(--amber-800);
+}
+
+.text-amber-900 {
+  color: var(--amber-900);
+}
+
+.hover\:text-amber-700:hover {
+  color: var(--amber-700);
+}
+
+.hover\:text-amber-800:hover {
+  color: var(--amber-800);
+}
+
+.hover\:bg-cream-100:hover {
+  background-color: var(--cream-100);
 }
