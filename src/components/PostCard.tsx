@@ -4,9 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface Post {
-  id: number;
+  id: string;
   title: string;
   excerpt: string;
+  summary: string;
+  content: string;
   author: {
     name: string;
     avatar: string;
@@ -14,14 +16,17 @@ interface Post {
   publishedAt: string;
   readTime: string;
   tags: string[];
+  bibleReferences: string[];
+  category: string;
   image: string;
 }
 
 interface PostCardProps {
   post: Post;
+  onClick: (post: Post) => void;
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post, onClick }: PostCardProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -31,8 +36,19 @@ export default function PostCard({ post }: PostCardProps) {
     });
   };
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Prevent click when clicking on action buttons
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
+    onClick(post);
+  };
+
   return (
-    <article className="bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors duration-200 overflow-hidden group">
+    <article 
+      className="bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors duration-200 overflow-hidden group cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="flex flex-col md:flex-row">
         {/* Image */}
         <div className="md:w-1/3 lg:w-1/4">
@@ -63,9 +79,7 @@ export default function PostCard({ post }: PostCardProps) {
 
             {/* Title */}
             <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-              <Link href={`/feed/post/${post.id}`} className="hover:underline">
-                {post.title}
-              </Link>
+              {post.title}
             </h2>
 
             {/* Excerpt */}
