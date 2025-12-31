@@ -25,14 +25,14 @@ export default async function Home() {
       {/* Header with Sync Button */}
       <div className="max-w-7xl mx-auto flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Jesus Is King Center</h1>
-        <form action={async () => {
+        {/* <form action={async () => {
           "use server"
           await syncContent()
         }}>
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
             Sync New Content
           </button>
-        </form>
+        </form> */}
       </div>
 
       {/* The Grid */}
@@ -44,7 +44,7 @@ export default async function Home() {
 
       {cleanResources.length === 0 && (
         <div className="text-center py-20 text-gray-500">
-          No content yet. Click "Sync New Content" to start!
+          No content yet
         </div>
       )}
     </main>
