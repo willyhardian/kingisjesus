@@ -15,9 +15,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Discover Jesus | Faith, Hope & Truth",
-  description: "Explore the teachings of Jesus Christ and discover how faith can transform your life with daily devotions and inspiring testimonials.",
-  keywords: ["Jesus", "Christianity", "Faith", "Devotions", "Testimonials", "Bible", "Christian Media"],
+  title: "Discover Jesus | Trending Christian Videos & Daily Inspiration",
+  description: "Fuel your daily walk with Jesus. Watch curated, modern Christian videos, powerful testimonies, and real talk on faith designed for the next generation of believers.",
+  keywords: [
+    "Christian Videos",
+    "Youth Ministry",
+    "Modern Faith",
+    "Daily Devotional Video",
+    "Christian Testimonies",
+    "Gen Z Christianity",
+    "Worship Culture"
+  ],
+  openGraph: {
+    title: "Discover Jesus | Curated Christian Videos",
+    description: "Fuel your daily walk with Jesus. Watch curated videos and real talk on faith.",
+    type: 'website',
+    siteName: "Jesus is King Center",
+    locale: 'en_US',
+    images: '/logo.png',
+    // images: [
+    //   {
+    //     url: 'https://www.your-website.com/og-social-share.jpg', // Make sure this image is vibrant/modern
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Discover Jesus Video Library',
+    //   },
+    // ],
+  },
 };
 
 export default function RootLayout({

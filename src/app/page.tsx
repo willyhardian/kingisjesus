@@ -23,8 +23,9 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-[#0d1117] text-white p-8">
       {/* Header with Sync Button */}
-      <div className="max-w-7xl mx-auto flex justify-between items-center mb-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-8">
         <h1 className="text-3xl font-bold">Jesus Is King Center</h1>
+        <p>Your curated daily feed for worship, wisdom, and inspiration.</p>
         {/* <form action={async () => {
           "use server"
           await syncContent()
